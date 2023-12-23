@@ -1,13 +1,12 @@
 .container{
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1rem;
 }
 .products{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
     justify-content: space-between;
    
 }

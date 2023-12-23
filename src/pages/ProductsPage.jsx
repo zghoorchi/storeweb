@@ -3,8 +3,10 @@ import { useProducts } from '../context/ProductContext'
 import styles from './ProductsPage.module.css';
 import Card from '../components/Card';
 import Loader from '../components/Loader';
-import { TbSearch } from "react-icons/tb";
-import { TbCategory } from "react-icons/tb";
+import {  filterProducts, getInitialQuery, searchProducts } from '../components/helpers/helpers';
+import { useSearchParams } from 'react-router-dom';
+import SearchBox from '../components/SearchBox';
+import SideBar from '../components/SideBar';
 
 
 function ProductsPage() {
@@ -13,36 +15,29 @@ function ProductsPage() {
     const [displayed,setDisplayed] = useState([]);
     const [query,setQuery] =  useState({});
 
+const[searchParams , setSearchParams] = useSearchParams();
+
+
   useEffect(()=>{
   setDisplayed(products);
+  
+  setQuery(getInitialQuery(searchParams));
   },[products])
 
 useEffect(()=>{
-  console.log(query);
+  setSearchParams(query);
+  setSearch(query.search || "");
+ let finalProducts =searchProducts(products,query.search)
+ finalProducts = filterProducts(finalProducts,query.category);
+ setDisplayed(finalProducts);
 },[query])
 
-    const inputHandler = (event) =>{
-      setSearch(event.target.value.toLowerCase().trim());
-        
-    }
-    const searchHandler = () =>{
-    setQuery(query => ({...query,search}))
-
-    }
-    const categoryHandler = (event) =>{
-       const { tagName } =  event.target;
-       const category = event.target.innerText.toLowerCase();
-       if(tagName !== "LI") return;
-       setQuery(query => ({...query , category}))
-
-    }
+   
+   
+   
   return (
     <>
-    <div>
-      <input type="text" placeholder='Search ...' value={search} onChange={inputHandler}/>
-      <button onClick={searchHandler}><TbSearch /></button>
-
-    </div>
+  <SearchBox search={search} setSearch={setSearch} setQuery={setQuery}/>
      <div className={styles.container}>
      <div className={styles.products}>
         {!displayed.length && <Loader />}
@@ -50,19 +45,7 @@ useEffect(()=>{
             <Card key={product.id} data={product}/>
         ))}
      </div>
-     <div>
-      <div >
-       <TbCategory />
-       <p>Categories</p>
-      </div>
-      <ul onClick={categoryHandler}>
-        <li >All</li>
-        <li>Electronics</li>
-        <li>Jewelery</li>
-        <li>Men's Clothing</li>
-       <li>women's clothing</li>
-      </ul>
-     </div>
+    <SideBar query={query} setQuery={setQuery} />
     </div>
     </>
    
