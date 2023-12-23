@@ -1,0 +1,64 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+
+}
+
+.container img{
+    width: 100%;
+    border: 1px dashed red;
+    border-radius: 10%;
+    padding: 2rem;
+}
+.details{
+    border:1px solid #ddd;
+    margin-left: 2rem;
+    padding: 2rem;
+    border-radius: 2rem;
+
+   
+}
+.title{
+    color: red;
+    margin-bottom: 2rem;
+
+}
+.description{
+    margin-bottom: 3rem;
+}
+.catprice{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.backtoshop{
+    background-color: red;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.backtoshop a{
+    margin-left: 10px;
+}
+.description{
+    line-height: 3;
+}
+.men{
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+
+}
+.men svg{
+    margin-right: 1rem;
+    color: red;
+    font-size: 1.5rem;
+}
+.price svg{
+    color: red;
+    margin-right: 1rem;
+}
