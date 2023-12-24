@@ -1,0 +1,44 @@
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px dashed #777;
+    padding: 2rem;
+    border-radius: 30px;
+    /* margin: 10px; */
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.card img{
+    width: 50px;
+}
+
+.removeitem{
+background-color: red;
+color: #fff;
+border: none;
+padding: 0.5rem;
+border-radius:5px;
+font-size: 1.5rem;
+}
+.decreaseitem{
+background-color: red;
+color: #fff;
+border: none;
+padding: 0.5rem;
+border-radius:5px;
+font-size: 1.5rem;
+}
+.increase{
+ background-color: red;
+color: #fff;
+border: none;
+padding: 0.5rem;
+border-radius:5px;
+font-size: 1.5rem;
+}
+.actions span{
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,50 @@
+.container{
+    border: 1px dashed red;
+    padding: 1rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.first svg, p{
+ color:red;
+}
+.first span{
+    margin-left: 10px;
+}
+.second{
+    display: flex;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-bottom: 10px;
+    width: 100%;
+
+}
+.second svg{
+    color: red;
+}
+.third{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+.third svg{
+    color: red;
+}
+.container button{
+    width: 100%;
+    color:#fff;
+    padding:5px;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+
+}

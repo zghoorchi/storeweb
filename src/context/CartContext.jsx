@@ -50,7 +50,7 @@ switch (action.type) {
           selectedItems:[],
           itemsCounter:0,
           total:0,
-          checkout:true
+          checkout:true,
         }
   default:
     throw new Error("Invalid Action")
